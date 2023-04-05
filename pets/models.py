@@ -21,5 +21,10 @@ class Pet(models.Model):
         related_name="pets",
     )
 
+    traits = models.ManyToManyField(
+        "traits.Trait",
+        related_name="pets",
+    )
+
     def __repr__(self) -> str:
         return f"<Pet ({self.id} - {self.name})>"
